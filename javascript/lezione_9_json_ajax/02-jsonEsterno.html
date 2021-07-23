@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="demo"></div>
+
+
+    <script type="text/javascript">
+    
+    var elDemo = document.getElementById('demo');
+    var xmlHttp = new XMLHttpRequest();
+    
+    // const url = 'assets/studenti.txt';
+    
+    // //preparo la richiesta usando metodo open
+    // xmlHttp.open('GET', url, true);
+    // //invio la richiesta al server
+    // xmlHttp.send();
+
+    // xmlHttp.onreadystatechange = function() {
+    //     if(this.readyState == 4 && this.status == 200){
+    //         console.log(this.responseText);
+
+    //         var mioObj = JSON.parse(this.responseText);
+
+    //         console.log(mioObj);
+    //         elDemo.innerHTML = '<h3>Nome: ' + mioObj.nome + " " + mioObj.cognome + '</h3>'
+    //         elDemo.innerHTML += "sta studiando le seguenti materie: ";
+
+    //         for(var i = 0; i < mioObj.materie.length; i++){
+    //             elDemo.innerHTML += "<li>" + mioObj.materie[i] + "</li>";
+    //         }
+    //     }
+    
+    // }
+
+    //chiamo una api free online
+    // const url = 'https://jsonplaceholder.typicode.com/posts';
+
+    // xmlHttp.open('GET',url,true);
+
+    // xmlHttp.send();
+
+    // xmlHttp.onreadystatechange = function(){
+    //     if(this.readyState == 4 && this.status == 200){
+
+    //         var posts = JSON.parse(this.responseText);
+    //         // console.log(posts);
+
+    //         for(var i = 0; i < posts.length; i++){
+    //             elDemo.innerHTML += '<h1>' + posts[i].title + '</h1>';
+    //             elDemo.innerHTML += '<p>' + posts[i].body + '</p>'
+    //         }
+
+
+    //     }
+    // }
+
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    var dati = [];
+    //oggetto per la post
+    var mioPost = {
+        title: "bello",
+        body: "molto bello",
+        userId: 4
+    }
+
+    // fetch(url)
+    //     .then( response => {return response.json()})
+    //     .then( res => {
+    //         this.dati = res;
+    //         console.log(dati);
+    //     });
+
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(mioPost),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+
+
+
+    
+    </script>
+</body>
+</html>

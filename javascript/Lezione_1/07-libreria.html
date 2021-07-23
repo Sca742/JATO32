@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Benvenuti sul nostro scaffale</h1>
+    <p>Questi sono i titoli in esposizione</p>
+    <div> 
+        <ol id="titoli">
+
+        </ol>
+    </div>
+
+
+    <script type="text/javascript">
+    
+    var libri = [
+        'il nome della rosa',
+        'il pendolo di foucault',
+        'Harry potter',
+        'il vecchio e il mare',
+        'perle ai porci',
+        'shining',
+        'la fattoria degli animali'
+    ];
+
+    //stampo i titoli nel div con id titoli, in una lista li
+
+    //Recupero il div titoli e lo salvo in una variabile
+    var elTitoli = document.getElementById("titoli");
+
+        // elTitoli.innerHTML = "<p> Ciao dal JS </p>";
+      
+        for(var i = 0; i < libri.length ; i++ ){
+            elTitoli.innerHTML += '<li>' + libri[i] + ' <button> Prenota </button> </li>';
+        }
+       
+
+
+    </script>
+
+</body>
+</html>

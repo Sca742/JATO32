@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Username: <input type="text" name="" id="username" placeholder="Username"> <br>
+    Password: <input type="password" name="" id="password" placeholder="Password"> <br>
+    <input type="button" value="Login" onclick="logga()">
+
+    <div id="demo">
+
+    </div>
+
+    <script type="text/javascript">
+
+    var elDemo = document.getElementById('demo');
+
+    function logga(){
+
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        console.log("Username : " + username);
+        console.log("Password : " + password);
+        
+        stampa(username);
+        resetCampi();
+    }
+
+    function stampa(nomeUtente){
+        elDemo.innerHTML = "Benvenuto " + nomeUtente + ", sei nella tua Dashboard";
+    }
+
+    function resetCampi(){
+        document.getElementById('username').value = "";
+        document.getElementById('password').value = "";
+    }
+
+
+    </script>
+</body>
+</html>

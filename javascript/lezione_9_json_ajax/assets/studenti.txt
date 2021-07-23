@@ -1,0 +1,19 @@
+{
+    "nome":"virgilio",
+    "cognome":"collura",
+    "materie":["javascript","java","html","css","database","Soft skills"],
+    "materiale":[
+        {
+            "tipo":"PC",
+            "modello":"Dell",
+            "SO":"windows"
+        },
+
+        {
+            "tipo":"zaino",
+            "modello":"invicta",
+            "SO":"null"
+        }
+    ]
+
+}

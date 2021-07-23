@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="css/04style.css">
+<title>To-Do list</title>
+</head>
+<body>
+    <div class="col-8 mx-auto py-5">
+    <input type="text" class="form-control " placeholder="inserisci qui" id="item"> 
+    <button id="btn" class="btn btn-primary my-4"> inserisci </button>
+    </div>
+
+    <div id="lista" class="col-8 mx-auto">
+
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    //Aggiunta alla lista ok
+    //pulsante elimina + animazione
+    //pulsante modifica  
+    //click su item -> barrato
+    //aggiungere bootstrap validation su campo input
+    //list group flush
+    //btn outline
+
+       
+    $('#btn').on('click', function(){
+
+        var item = $('#item').val();  //recupero value di campo input
+        if(item == ''){
+            event.preventDefault();
+        }else{
+            $('#lista').append('<li>' + item + '<button class="btn btn-primary" id="btnDel"> <i class="fas fa-broom"></i></button></li>');
+            $('#item').val('');
+        }
+       
+    });
+
+    $('#item').keyup(function(event){
+        if(event.keyCode == 13){
+            $('#btn').click();
+        }
+    });
+
+    function fatto(){
+        //questa imposterà la classe barrato
+        $(this).addClass('barrato');
+
+        //fare i controlli vari per la classe
+    }
+
+    $(document).on('click', 'li', fatto);
+
+    function elimina(){
+        $(this).parent().remove();
+    }
+    $(document).on('click','#btnDel',elimina);
+
+</script>
+
+</body>
+</html>

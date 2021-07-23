@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>inserisci i tuoi dati</h1>
+    <input type="text" name="" id="nome" placeholder="Nome"> <br>
+    <input type="text" name="" id="cognome" placeholder="Cognome"> <br>
+    <input type="number" name="" id="numMatricola" placeholder="Numero di Matricola"> <br>
+    <br>
+    <label for="promosso">promosso</label>
+    <input type="checkbox" name="" id="promosso">
+
+    <button onclick="iscrivi()">iscriviti</button>
+
+    <div id="demo"></div>
+
+
+    <script>
+
+        var elDemo = document.getElementById('demo');
+
+        function iscrivi(){
+
+            var elNome = document.getElementById('nome').value;
+            var elCognome = document.getElementById('cognome').value;
+            var elMatricola = document.getElementById('numMatricola').value;
+            var elPassato = false;
+           
+            if(document.getElementById('promosso').checked){
+                var elPassato = true;
+            }
+
+            if(elNome!='' && elCognome!='' && elMatricola!=''){
+                var iscritto = new persona(elNome, elCognome, elMatricola, elPassato);
+    
+             
+                iscritto.toString();
+                resetCampi();
+            
+            }else{
+                alert('inserire tutti i dati');
+            }
+        }
+
+
+        function resetCampi(){
+            document.getElementById('nome').value = "";
+            document.getElementById('cognome').value = "";
+            document.getElementById('numMatricola').value = "";
+        }
+
+      
+        function persona(nome, cognome, matricola, promosso){
+
+            this.nome = nome;
+            this.cognome = cognome;
+            this.matricola = matricola;
+            this.promosso = promosso;
+
+            this.toString = function(){
+            
+                if(this.promosso == true){ 
+                    this.promosso = 'si'; 
+                } else { 
+                    this.promosso = 'no'; 
+                }
+
+                for(const chiave in this){
+                    if(typeof this[chiave] != 'function'){
+                        // elDemo.innerHTML += chiave + ': ' + this[chiave] + '<br>';
+                    console.log(chiave + ': ' + this[chiave]);
+                    }
+                
+                }
+            
+            }
+
+        }
+
+    </script>
+</body>
+</html>

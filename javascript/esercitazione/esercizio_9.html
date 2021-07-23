@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <input type="text" id="frase" placeholder="inserire frase">
+    <input type="button" value="clicca qui" onclick="UpperCase()">
+    <div id="result"></div>
+
+    <script>
+        
+        var elResult = document.getElementById('result');
+
+        function UpperCase(){
+
+            var elFrase = document.getElementById('frase').value;
+            var frase = elFrase.split(" ");
+            var capital = " ";
+            for(var i = 0; i < frase.length; i++){
+                capital += frase[i][0].toUpperCase() + frase[i].substr(1) + " ";
+                console.log(frase[i][0].toUpperCase() + frase[i].substr(1));
+            }
+
+            elResult.innerHTML = capital;
+        }
+
+    </script>
+</body>
+</html>

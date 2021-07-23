@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="https://www.example.org">
+        Username: <input type="text" name="username" id="username"><br>
+        Commento: <input type="text" name="commento" id="commento">
+        <input type="submit" value="Invia">
+        <input type="button" id="btn" value="Local">
+        <input type="button" id="btn2" value="Logout">
+    </form>
+
+    <!-- MODERNIZR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <script type="text/javascript">
+
+        if(Modernizr.localstorage){
+            var username = document.getElementById('username');
+            var commento = document.getElementById('commento');
+
+            username.value = localStorage.getItem('username');
+            commento.value = localStorage.getItem('commento');
+
+            username.addEventListener('input', function(){
+                localStorage.setItem('username', username.value);
+            }, false);
+            
+            commento.addEventListener('input', function(){
+                localStorage.setItem('commento', commento.value);
+            }, false);
+
+            
+        }else{
+            console.log("Non posso collegarmi al local storage");
+        }
+    
+
+        var obj = {
+            nome: "Pippo",
+            dataIscrizione: "06/07/2021"
+        }
+    
+        var btn = document.getElementById('btn').addEventListener('click', registra, false);
+        
+        var btn2 = document.getElementById('btn2').addEventListener('click', pulisciLocal, false)
+
+        function registra(){
+            localStorage.setItem('utente',JSON.stringify(obj));
+            localStorage.setItem('loggedIN', true);
+        }
+
+        function pulisciLocal(){
+            localStorage.clear();
+        }
+
+        (localStorage.loggedIN) ? console.log("Sei Loggato") : console.log("Non sei loggato");;
+
+      
+    </script>
+</body>
+</html>

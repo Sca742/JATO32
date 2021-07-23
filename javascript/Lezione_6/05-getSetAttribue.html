@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li id="uno"> Frutta</li>
+        <li id="due"> Verdura</li>
+        <li class="rosso" id="tre"> Mele</li>
+        <li class="rosso" id="quattro"> Carne</li>
+    </ul>
+
+
+    <script type="text/javascript">
+        var elUno = document.getElementById('uno');
+
+        //leggo attributo ID
+        if(elUno.hasAttribute('id')){
+        var attrUNO = elUno.getAttribute('id');
+        console.log(attrUNO);
+        }
+
+        // leggo attributo class
+        var elTre = document.getElementById('tre');
+        if(elTre.hasAttribute('class')){
+            var attrTRE = elTre.getAttribute('class');
+            console.log(attrTRE);
+        }
+        
+        //Questi due metodi rimuovo e settano in toto sovrascrivendo l'attributo 
+        //SET ATTRIBUTE
+        var elDue = document.getElementById('due');
+        elDue.setAttribute('class', 'blu');
+
+        //REMOVE ATTRIBUTE
+        elDue.removeAttribute('class');
+
+
+        //aggiunta senza rimozione della classe
+        var elQuat = document.getElementById('quattro');
+        // elQuat.setAttribute('class', 'barrato') //questo sostituisce completamente la classe
+        elQuat.classList.add('barrato');
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page">
+        <h1 id="header">Lista</h1>
+        <h2> Compra Cose</h2>
+        <ul>
+            <li class="rosso" id="uno"> Frutta</li>
+            <li class="rosso" id="due"> Verdura</li>
+            <li class="rosso" id="tre"> Mele</li>
+            <li class="rosso" id="quattro"> Carne</li>
+        </ul>
+    </div>
+
+<script type="text/javascript">
+    //Query Selector 
+    var elUno = document.querySelector('#uno');
+    // var elUno = document.querySelector('li#uno');
+    console.log(elUno);
+
+    var elRosso = document.querySelector('li.rosso');
+    console.log(elRosso);
+
+    //Query Selector All
+    var els = document.querySelectorAll('.rosso');
+    console.log(els);
+    // els[1].className = 'blu';
+    for(var i = 0 ; i < els.length; i++){
+        els[i].className = 'blu'
+    }
+
+</script>
+
+</body>
+</html>

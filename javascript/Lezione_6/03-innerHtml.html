@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page">
+        <h1 id="header">Lista</h1>
+        <h2> Compra Cose</h2>
+        <ul>
+            <li class="rosso" id="uno"> Frutta</li>
+            <li class="rosso" id="due"> Verdura</li>
+            <li class="rosso" id="tre"> Mele</li>
+            <li class="rosso" id="quattro"> Carne</li>
+        </ul>
+    </div>
+
+<script type="text/javascript">
+    //INNER HTML
+    var elUno = document.querySelector('#uno');
+    var contenuto = elUno.innerHTML //leggo il contenuto in html
+    console.log(contenuto);
+    elUno.innerHTML = "<h1>Anguria</h1>" //scrivo il contenuto
+
+    //TextContent
+    var elDue = document.querySelector('#due');
+    var contenuto2 = elDue.textContent;
+    console.log(contenuto2);
+    elDue.textContent = "<h1>Insalata</h1>" //è un contenuto testuale == textNode
+
+    //Inner Text ma non è da utilizzare
+
+    
+
+</script>
+
+</body>
+</html>

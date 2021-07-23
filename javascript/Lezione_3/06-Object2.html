@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="demo"></div>
+    
+    <script type="text/javascript">
+    
+        var elDemo = document.getElementById('demo');
+
+        //funzione costruttore
+        function Studente(nome,cognome,matricola,dataNascita,promosso){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.matricola = matricola;
+            this.dataNascita = new Date(dataNascita).getFullYear();
+            this.promosso = promosso;
+
+            this.toString = function(){
+                for(const chiave in this){
+                    if(typeof this[chiave] != 'function'){
+                        elDemo.innerHTML += chiave + ': ' + this[chiave] + '<br>';
+                    }
+                }
+            }
+        }
+
+        // var stud1 = new Studente('pippo', 'poppi',1,'01/01/1930',true);
+
+        var classe = [
+            new Studente('pippo', 'poppi',1,'01/01/1930',true),
+            new Studente('pluto','pluti',2,'01/08/1931',true),
+            new Studente('tizio','caio',3,'0',true),
+            new Studente('pinco','pallino',4,'10/10/2010',true)
+        ]
+    
+        for(var i = 0 ; i < classe.length; i++){
+            classe[i].toString();
+        }
+
+        //notazione con costruttore
+        var persona = new object();
+        persona.nome = "paperino";
+        persona.cognome = 'paolino';
+        persona.matricola = 10;
+
+        //notazione JSON
+        var studente = '{"nome":"Federico","cognome": "Scarlata"}';
+
+    </script>
+</body>
+</html>
