@@ -1,0 +1,49 @@
+<!-- Programma che esegue la divisione e la moltiplicazione tra due numeri. L’utente potrà scegliere tramite pulsante quale delle due operazioni eseguire (form input). Il risultato va mostrato in HTML -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="" id="numero_1" placeholder="numero 1">
+    <input type="text" name="" id="numero_2" placeholder="numero 2">
+    <br>
+    <br>
+    <input type="button" value="moltiplicazione" onclick="moltiplica()">
+    <input type="button" value="divisione" onclick="dividi()">
+    <br>
+    <div id="risultato"></div>
+
+
+
+    <script type='text/javascript'>
+    
+    var elRisultato = document.getElementById('risultato');
+
+    function moltiplica(){
+        var elNumero1 = document.getElementById('numero_1').value;
+        var elNumero2 = document.getElementById('numero_2').value;
+        
+        var risultato = elNumero1 * elNumero2;
+
+        elRisultato.innerHTML = "il risultato della moltiplicazione è: " + risultato;
+    }
+
+    function dividi(){
+        var elNumero1 = document.getElementById('numero_1').value;
+        var elNumero2 = document.getElementById('numero_2').value;
+        
+        var risultato = elNumero1 / elNumero2;
+
+        elRisultato.innerHTML = "il risultato della divisione è: " + risultato;
+    }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="GET" action="https://www.example.org" id="formUtente" name="mioForm">
+    
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nomeUtente"  ><br>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" name="cognome" id="cognomeUtente" ><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="emailUtente" ><br>
+
+        <label for="codiceFisc">C.F.:</label>
+        <input type="text" name="codiceFisc" id="codiceFiscUtente" ><br>
+
+        <label for="CAP">CAP:</label>
+        <input type="text" name="cap" id="cap">
+        <br>
+        <select name="nazione">
+            <option value="-1" selected>[Seleziona]</option>
+            <option value="ITA">ITA</option>
+            <option value="FRA">FRA</option>
+            <option value="GER">GER</option>
+            <option value="SWE">SWE</option>
+        </select>
+        <br>
+
+        <textarea id="messaggio" name="messaggio" rows="5" cols="20" ></textarea>
+
+        <div id="carRes">140</div>
+        
+        <input type="submit" value="Iscriviti">
+    </form>
+
+    <div id="feedback"></div>
+
+    <script type="text/javascript">
+        var formUtente = document.getElementById('formUtente');
+        var feed = document.getElementById('feedback');
+        var formatoCF = /^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$/i
+
+        function controlla(){
+            //controllo tutti i vari campi del form attraverso gli ID
+            // feed.innerHTML = '';
+            // var nomeUtente = document.getElementById('nomeUtente');
+            // var cognomeUtente = document.getElementById('cognomeUtente');
+            // var emailUtente = document.getElementById('emailUtente');
+            // var codiceFiscUtente = document.getElementById('codiceFiscUtente');
+
+            // if(nomeUtente.value == ''){
+            //     feed.innerHTML += 'Hai dimenticato il nome utente <br>';
+            //     event.preventDefault();
+            // }
+            // if(cognomeUtente.value == ''){
+            //     feed.innerHTML += 'Hai dimenticato il cognome <br>'
+            //     event.preventDefault();
+            // }
+            // if(emailUtente.value == ''){
+            //     feed.innerHTML += 'Hai dimenticato la mail <br>';
+            //     event.preventDefault();
+            // }
+            // if(!codiceFiscUtente.value.match(formatoCF)){
+            //     feed.innerHTML += 'Il codice fiscale inserito non è valido <br>';
+            //     event.preventDefault();
+            // }
+
+            //CONTROLLO ATTRAVERSO NAME
+            feed.innerHTML = ''
+            if(document.mioForm.nome.value == ''){
+                feed.innerHTML += 'Hai dimenticato il nome <br>';
+                event.preventDefault();
+            }
+            if(document.mioForm.cognome.value == ''){
+                feed.innerHTML += 'Hai dimenticato il cognome <br>';
+                event.preventDefault();
+            }
+            if(document.mioForm.email.value == ''){
+                feed.innerHTML += 'Hai dimenticato la email <br>';
+                event.preventDefault();
+            }
+            if(!document.mioForm.codiceFisc.value.match(formatoCF)){
+                feed.innerHTML += 'Hai dimenticato il codice fiscale <br>';
+                event.preventDefault();
+            }
+            if(document.mioForm.cap.value == '' || isNaN(document.mioForm.cap.value)
+            || document.mioForm.cap.value.length != 5){
+                feed.innerHTML += "Hai sbagliato ad inserire il CAP <br>";
+                event.preventDefault();
+            }
+            if(document.mioForm.nazione.value == '-1'){
+                feed.innerHTML += 'Per favore seleziona una nazionalità '
+                event.preventDefault();
+            }
+        }   
+        
+
+        formUtente.addEventListener('submit', controlla, false);
+
+        function contaCaratteri(){
+            var tweet = document.getElementById('messaggio').value;
+            var carRes = document.getElementById('carRes');
+            var contatore = 140 - (tweet.length);
+
+            carRes.innerHTML = contatore;
+
+            if(contatore <= 0){
+                var mess = document.getElementById('messaggio').value.substring(0,140);
+                areaTxt.value = mess;
+            }
+
+            feed.innerHTML = event.keyCode;  //metto a schermo il codice del tasto
+        }
+
+        var areaTxt = document.getElementById('messaggio');
+        
+        areaTxt.addEventListener('keyup', contaCaratteri, false);
+
+
+        //INVIARE UN CAMPO DI INPUT PREMENDO INVIO
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Posizione Mouse</h1>
+    
+    <div id="stats">
+        schermo X : <input type="text" id="sx"> <br>
+        schermo Y : <input type="text" id="sy"><br>
+        pagina X : <input type="text" id="px"><br>
+        pagina Y : <input type="text" id="py">
+        
+    </div>
+
+    <div id="demo"></div>
+
+    <script>
+        var sx = document.getElementById('sx');
+        var sy = document.getElementById('sy');
+        var px = document.getElementById('px');
+        var py = document.getElementById('py');
+
+        var elBody = document.getElementsByTagName('body')[0];
+
+        function mostraPos(event){
+            sx.value = event.screenX;
+            sy.value = event.screenY;
+            px.value = event.pageX;
+            py.value = event.pageY;
+
+        }
+
+        elBody.addEventListener('mousemove',mostraPos,false);
+      
+
+        function cambiaColore(){
+
+            var larg = window.outerWidth;
+            var alt = window.outerHeight;
+            document.getElementById('demo').innerHTML = 'Altezza browser: ' + alt + '<br> Larghezza browser: '+ larg;
+        }
+        window.addEventListener('resize',cambiaColore,false)
+
+
+    </script>
+
+</body>
+</html>

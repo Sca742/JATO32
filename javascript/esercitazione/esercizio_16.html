@@ -1,0 +1,40 @@
+<!-- Esercizio 16–Trova la parola all’interno del seguente testo:“JavaLorem ipsum sit dolor Javaaliqua clara et pulcra sunt Java”, quando la trovi stampa la parola, altrimenti stampa: “parola non trovata” -->
+
+<!-- DA FINIRE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>quale parola vuoi trovare all'interno del seguente testo: </h1>
+    <p>JavaLorem ipsum sit dolor Javaaliqua clara et pulcra sunt Java</p>
+
+    <input type="text" name="" id="parola" placeholder="inserisci la parola che vuoi cercare" style="width: 13rem;">
+
+    <input type="button" value="cerca" onclick="cerca()">
+
+    <div id="result"></div>
+
+
+    <script type="text/javascript">
+
+        var testo = 'JavaLorem ipsum sit dolor Javaaliqua clara et pulcra sunt Java';
+
+        var elResult = document.getElementById('result');
+
+
+        function cerca(){
+
+            var elParola = document.getElementById('parola').value;
+
+            console.log(testo.split(''));
+        }
+
+    </script>    
+</body>
+</html>

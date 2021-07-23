@@ -1,0 +1,41 @@
+<!-- Scrivere un programma che calcola il perimetro e l’areadi un triangolo avente i lati della seguente lunghezza: 5,6,7. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script type="text/javascript">
+        var lato1 = 5;
+        var lato2 = 6;
+        var lato3 = 7;
+
+        function calcolaPerimetro(){
+            var perimetro = lato1 + lato2 + lato3;
+            return perimetro;
+        }
+
+        var perimetro = calcolaPerimetro();
+        var sp = perimetro/2;
+
+        function calcolaArea(){
+            var area = sp * (sp - lato1) * (sp-lato2)*(sp-lato3);
+            return area;
+        }
+
+        var area = calcolaArea();
+        console.log('il perimetro è: ' + perimetro);
+        console.log("l'area è: " + Math.sqrt(area));
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista spesa con prezzi</h1>
+    
+    <ul id="lista"></ul>
+
+    <h4 id="totale"></h4>
+
+
+
+    <script type="text/javascript">
+
+    var lista = [ 'pomodori: 0.90 €', 'acqua: 1.5 €', 'pollo: 11 €', 'birra: 2.5 €'];
+    var prezzi = [ 0.90, 1.5, 11, 2.5 ];
+
+    var elLista = document.getElementById('lista');
+    var elTotale = document.getElementById('totale');
+    var somma = 0;
+    
+    for(var i = 0; i < lista.length;i++){
+        
+        elLista.innerHTML += '<li>' + lista[i] + ' <button id="bottone"> Compra </button> </li>';  
+    }
+
+    for(var i = 0; i < prezzi.length; i++){
+        somma = somma + prezzi[i];
+    }
+    elTotale.innerHTML = 'Totale: ' + somma;
+
+</script>
+
+</body>
+</html>

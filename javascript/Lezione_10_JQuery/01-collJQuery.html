@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Benvenuto</h1>
+    <h2>Benvenuto</h2>
+    <h3>Benvenuto</h3>
+
+    <ul>
+
+        <li class="blu" id="uno">Ciao</li>
+        <li class="blu" id="due">come </li>
+        <li class="blu" id="tre">stai </li>
+        <li class="blu" id="quattro">bene </li>
+        <li class="blu" id="cinque">grazie</li>
+    </ul>
+
+
+    <button>sparisci</button>
+
+    <h4>copia della lista</h4>
+    <ul id="listaCopia"></ul>
+
+
+    <div>primo div
+        <span></span>
+    </div>
+    <div >secondo div</div>
+
+    <!-- SCRIPT JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- MIO SCRIPT -->
+    <script type="text/javascript">
+    //selettori
+
+    $('#uno').addClass('rosso');
+    $('.blu').removeClass('blu');
+
+    // console.log($('.blu'));
+    $(':header').addClass('blu');
+
+    $('li:lt(2)').hide().fadeIn(1500);
+
+    $('li').on('click',function(){
+        $(this).hide().fadeOut(1500).remove();
+
+    })
+
+    // metodoREADY
+    $('document').ready(function(){
+        $('button').click(function(){
+            $('ul').fadeOut(2000);
+        })
+    })
+
+    //abbreviazione metodo ready
+    $(function(){
+        //mio script
+        var $listaHTML = $('ul').html();
+        console.log($listaHTML);
+        $('#listaCopia').append($listaHTML);
+    
+        $('div:last').on('mouseenter',function(){
+            $('div:first').css('color','pink');
+        })
+
+        $('div:last').on('mouseleave',function(){
+            $('div:first').removeAttr('style');
+        })
+
+        var $c=0;
+
+        $('div:last').on('mousemove', function(){
+            $('div:first span').text($c++);
+        })
+
+        $(document).on('click','li',colora);
+
+        function colora(){
+            $('div:first span').toggleClass('blu')
+        }
+
+    });
+    
+
+    </script>
+</body>
+</html>

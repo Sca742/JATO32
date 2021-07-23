@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li class="rosso" id="uno"> Frutta</li>
+        <li class="rosso" id="due"> Verdura</li>
+        <li class="rosso" id="tre"> Mele</li>
+        <li class="rosso" id="quattro"> Carne</li>
+    </ul>
+
+    <ul>
+        <li>Acqua</li>
+        <li>Farina</li>
+        <li>Olio</li>
+        <li id="sale">Sale <button>Aggiungi</button> <button>Rimuovi</button> </li>
+        <li>Lievito</li>
+    </ul>
+
+    <script type="text/javascript">
+        //voglio inserire un altro li 
+        //Recupero il genitore
+        var elUL = document.getElementsByTagName('ul')[0];
+        //creo un nuovo elemento
+        var newLI = document.createElement('li'); //nodo elementi
+        console.log(typeof newLI);
+        var nuovoTxt = document.createTextNode('Birra'); //nodo di testo
+        console.log(typeof nuovoTxt);
+
+
+        //agganciare il figlio al genitore
+        newLI.appendChild(nuovoTxt); //<li>Birra</li>
+
+        //aggancio LI al mio UL 
+        elUL.appendChild(newLI);
+
+
+        //Remove CHild
+        var elementoFiglio = document.getElementsByTagName('li')[2];
+        var genitore = document.getElementsByTagName('ul')[0];
+
+        genitore.removeChild(elementoFiglio);
+
+        //SIBLINGS
+        var el3 = document.getElementById('due');
+
+        var itemPrec = el3.previousElementSibling;
+        itemPrec.className = 'blu'
+        console.log(itemPrec);
+        var itemSucc = el3.nextElementSibling;
+        itemSucc.className = 'blu'
+        console.log(itemSucc);
+
+        //First and LAST
+        var primoFiglio = elUL.firstElementChild;
+        console.log(primoFiglio);
+
+        var ultimoFiglio = elUL.lastElementChild;
+        console.log(ultimoFiglio);
+
+        var sale = document.getElementById('sale');
+        console.log(sale.firstChild.textContent);
+
+        console.log(sale.parentNode);
+            
+    
+    </script>
+</body>
+</html>

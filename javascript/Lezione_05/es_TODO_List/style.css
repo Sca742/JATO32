@@ -1,0 +1,14 @@
+li{
+    list-style: none;
+}
+
+#check{
+    margin-right: 1rem;
+}
+
+/* //al click sulla checkbox
+//barrare item come "fatto" */
+
+input:checked + span{
+    text-decoration: line-through;
+}

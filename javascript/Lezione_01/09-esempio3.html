@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+    <h1>Vendita sedie da ufficio</h1>
+    
+    <div id="saluti"></div>
+    <table>
+        <tr> 
+            <td>Marca: </td> <td id="marca"></td>
+        </tr>
+
+        <tr>
+            <td>Prezzo Articolo: </td> <td id="prezzo"></td>
+        </tr>
+
+        <tr>
+            <td>Spedizione: </td> <td id="spedizione"></td>
+        </tr>
+
+        <tr>
+            <td>Totale: </td><td id="totale"></td>
+        </tr>
+    </table>
+
+    <div id="galleria">
+        <!-- <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt=""> -->
+    </div>
+
+    <script type="text/javascript">
+    
+        var elSaluti = document.getElementById('saluti');
+        var elMarca = document.getElementById('marca');
+        var elPrezzo = document.getElementById('prezzo');
+        var elSpedizione = document.getElementById('spedizione');
+        var elTotale = document.getElementById('totale');
+        var elGalleria = document.getElementById('galleria');
+
+        var nomeUtente = "Federico";
+        var welcome = "Ciao " + nomeUtente + " stai acquistando: ";
+        
+        var prodotto = "Sedia UltraComoda 3000";
+        var prezzo = 259;
+        var costoSpedizione = 19;
+        var totale = prezzo + costoSpedizione;
+
+        elSaluti.innerHTML = "<h3>" + welcome + "</h3>";
+        elMarca.innerHTML = prodotto;
+        elPrezzo.innerHTML = prezzo + " €";
+        elSpedizione.innerHTML= costoSpedizione + " €";
+        elTotale.innerHTML = "<strong>" + totale + " €</strong>"; 
+
+        var imgs = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/anni_60.jpg' ];
+
+        for(var i = 0; i < imgs.length; i++){
+            elGalleria.innerHTML += "<img class='imgRes' src='" + imgs[i] + "' >";
+        }
+
+    </script>
+
+
+</body>
+</html>

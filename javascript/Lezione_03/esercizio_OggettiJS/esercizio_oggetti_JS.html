@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <title>Esercizio Oggetti</title>
+</head>
+<body>
+
+        <div class="wrapper">
+            
+            <h1>LOGIN</h1>
+            <input type="text" name="" id="nome" placeholder="Nome"> <br>
+            <input type="text" name="" id="cognome" placeholder="Cognome"> <br>
+            <input type="email" name="" id="email" placeholder="nome@email.com"> <br>
+            <input type="date" name="" id="dataNascita"> <br>
+        
+            <!-- seleziono maschio o femmina -->
+            <div class="formItem" id="maschio">
+                <input type="radio" id="m" name="sesso" value="m">
+                <label for="m">Maschio</label>
+            </div>
+            <br>
+            <div class="formItem" id="femmina">    
+                <input type="radio" id="f" name="sesso" value="f">
+                <label for="f">Femmina</label><br>
+            </div>
+            
+        
+            <button onclick="inviaDati()">Login</button>
+
+        </div>
+        
+        <div id="demo"></div>
+
+    <script src="assets.js"></script>
+
+</body>
+</html>

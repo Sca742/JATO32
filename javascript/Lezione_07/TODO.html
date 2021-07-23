@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>To-Do List</h1>
+
+    <input type="text" id="item">
+    <input type="date" id="data">
+    <button id="btn">Inserisci</button>
+
+    <div id="lista">
+
+
+    </div>
+
+    <script type="text/javascript">
+        //inserimento
+        //1STEP: cosa da fare - 26/06/21 ((nuovo LI))
+        //al click sull item inserisco il barrato
+        //2 STEP accanto all'item inserire un pulsante X per l'eliminazione e
+        // un pulsante per il modifica
+        //3STEP: se l'utente non compila uno dei due campi compare un avviso di colore rosso
+        //4STEP: inserire animate.css per far comparire dal basso verso l'alto l'item 
+
+
+        var btn = document.getElementById('btn');
+        var lista = document.getElementById('lista');
+
+        function Inserisci() {
+            //recupero quello che scrive l'utente
+            var item = document.getElementById('item').value;
+            var elData = document.getElementById('data').value;
+            var elLI = document.createElement('li');
+            var data = new Date(elData);
+
+            elLI.innerHTML = item + ' - ' + data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear();
+            elLI.setAttribute('class', 'animate__animated animate__fadeInLeftBig');
+            lista.appendChild(elLI);
+
+
+            //funzione barrato
+            function barrato() {
+                if(elLI.className == '' || elLI.className == 'animate__animated animate__fadeInLeftBig'){
+                    elLI.setAttribute('class', 'barrato');
+                }else{
+                    elLI.removeAttribute('class');
+                }
+            }
+
+            elLI.onclick = barrato;
+
+            //pulsante elimina + funzione Elimina
+            var elRemove = document.createElement('button');
+            elRemove.innerHTML = 'Elimina';
+            elLI.appendChild(elRemove);
+
+            function elimina(){
+                // lista.removeChild(elLI);
+                elLI.parentNode.removeChild(elLI);
+            }
+
+            elRemove.onclick = elimina;
+
+
+            //funzione MODIFICA + pulsante
+
+            
+        }
+
+        btn.onclick = Inserisci;
+    </script>
+</body>
+
+</html>

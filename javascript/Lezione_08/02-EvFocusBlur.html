@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="GET" action="https:www.example.org">
+
+        <label for="username">Username: </label>
+        <input type="text" id="username"> <br>
+        
+        <label for="email">email: </label>
+        <input type="text" id="email">
+    
+    </form>
+    <div id="feedback"></div>
+
+
+    <script type="text/javascript">
+        //focus e blur
+        var feedback = document.getElementById('feedback');
+    
+        var username = document.getElementById('username');
+
+        function suggerisci(){
+            feedback.innerHTML = 'Il tuo username deve essere composto da almeno 8 caratteri';
+            feedback.setAttribute('class','warning');
+
+        }
+
+        function controllaUser(){
+            var user = username.value;
+
+            if(user.length < 8){
+                feedback.innerHTML = ' il tuo username è inferiore a 8 caratteri';
+                feedback.setAttribute('class','alert');
+            } else{
+                feedback.innerHTML = '';
+            }
+        }
+
+        username.addEventListener('focus', suggerisci,false);
+        username.addEventListener('blur', controllaUser,false);
+
+
+    </script>
+</body>
+</html>

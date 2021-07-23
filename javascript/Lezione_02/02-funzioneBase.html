@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="chiediNome()">Chiedi nome Utente</button> <br>
+<button onclick="saluta()">Fatti salutare</button> <br>
+<div id="benvenuto"></div>
+
+    <script type="text/javascript">
+    
+    var username = '';
+
+    var elBenvenuto = document.getElementById('benvenuto');
+
+    function chiediNome(){
+        username = prompt('Come ti chiami?');
+    }
+
+    function saluta(){
+        if(username == ''){
+            elBenvenuto.innerHTML = 'non ho capito come ti chiami';
+        } else{
+            elBenvenuto.innerHTML = 'Ciao ' + username;
+        }
+    }
+
+    </script>
+</body>
+</html>

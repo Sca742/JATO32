@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- SCRIPT JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- MIO SCRIPT -->
+    <script type="text/javascript">
+
+        // get
+        // $.ajax({
+        //     url: "https://jsonplaceholder.typicode.com/posts",
+        //     type:"GET",
+        //     dataType:'json',
+        //     // statusCode:{
+        //     //     200: function(){
+        //     //         console.log('tutto ok');
+        //     //     },
+        //     //     404: function(){
+        //     //         console.log('errore 404');
+        //     //     },
+        //     //     500: function(){
+        //     //         console.log('errore 500');
+        //     //     }
+
+        //     // },
+        //     success: function(dati){
+        //         console.log(dati);
+        //     },
+
+        //     error:function(textStatus){
+
+        //         // if(textStatus.status == 404){
+
+        //         //     console.log('risorsa non trovata');
+        //         //     console.log(textStatus.status);
+        //         // }else{
+        //             console.log('qualcosa è andato storto');
+        //         // }
+        //     },
+
+        // })
+
+        // POST
+        // $.ajax({
+        //     url: "https://reqres.in/api/users?page=1",
+        //     type:"POST",
+        //     dataType:'json',
+        //     data:{
+        //         name: ' Federico Scarlata',
+        //         materie:['js','jquery','angular']
+        //     },
+        //     success: function(response){
+        //         console.log('utente registrato');
+        //         console.log(response);
+        //     }
+
+
+        // })
+
+        // POST - register
+        $.ajax({
+            url: "https://reqres.in/api/register",
+            type:"POST",
+            beforeSend:function(xhr){
+                xhr.setRequestHeader('Content-type', 'application/json');
+            },
+            dataType:'json',
+            data:{
+                email: 'FedericoScarlata@gmail.it',
+                password:'ciaone'
+            },
+            success: function(response){
+                console.log('utente registrato');
+                console.log(response);
+            }
+        })
+
+
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- Scrivere un programma che chiede il nome all’utente per poi restituire un saluto in un tag <h1> del HTML -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <input type="text" placeholder= "inserisci il nome" id="nome">
+        <input type="button" value="clicca per farti salutare" onclick="saluta()">
+
+        <div id="saluto"></div>
+
+
+        <script type="text/javascript">
+
+            var elSaluto = document.getElementById('saluto');
+        
+
+        function saluta(){
+
+            var nome = document.getElementById('nome').value;
+            elSaluto.innerHTML = '<h1> ciao ' + nome + '</h1>';
+        }
+
+        
+        </script>
+    </body>
+    </html>
